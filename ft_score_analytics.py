@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/28 20:19:14 by fanilran            #+#    #+#            #
-#   Updated: 2026/04/29 17:43:35 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/12 17:43:53 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -17,7 +17,8 @@ if __name__ == "__main__":
     print("=== Player Score Analytics ===")
 
     if len(sys.argv) == 1:
-        print("No score provided. Usage: python3 ft_score_analytics <score1> <score2> ...")
+        print("No score provided. Usage: python3 "
+              "ft_score_analytics <score1> <score2> ...")
     else:
         valid_args = []
         invalid_args = []
