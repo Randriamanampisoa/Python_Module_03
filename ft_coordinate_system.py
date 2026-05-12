@@ -7,13 +7,14 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/29 17:52:34 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/12 17:35:53 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/12 17:43:25 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 import math
 
-def get_player_pos() -> tuple:    
+
+def get_player_pos() -> tuple:
     while True:
         format = input("Enter new coordinates as floats in format 'x,y,z': ")
         split = format.split(",")
@@ -29,12 +30,12 @@ def get_player_pos() -> tuple:
                 elif i == 3:
                     index3 = float(index)
                 i += 1
-            return index1, index2, index3    
+            return index1, index2, index3
         except ValueError as e:
             print(f"Error on parameter '{index}': {e}")
         except UnboundLocalError as e:
             print(e)
-    
+
 
 if __name__ == "__main__":
     print("=== Game Coordinate System ===\n")
