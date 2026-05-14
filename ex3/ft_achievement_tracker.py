@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/13 12:39:03 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/13 17:31:30 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/14 12:15:33 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -44,7 +44,6 @@ if __name__ == "__main__":
     intersect = set.intersection(achievements[0], achievements[1],
                                  achievements[2], achievements[3])
     print(f"\nCommon achievements: {intersect}\n")
-
     alice_only = set.difference(achievements[0], achievements[1],
                                 achievements[2], achievements[3])
     bob_only = set.difference(achievements[1], achievements[0],
@@ -53,8 +52,15 @@ if __name__ == "__main__":
                                   achievements[1], achievements[3])
     dylan_only = set.difference(achievements[3], achievements[0],
                                 achievements[1], achievements[2])
-
     print(f"Only Alice has: {alice_only}")
     print(f"Only Bob has: {bob_only}")
     print(f"Only Charlie has: {charlie_only}")
     print(f"Only Dylan has: {dylan_only}")
+    alice_missing = union - achievements[0]
+    bob_missing = union - achievements[1]
+    charlie_missing = union - achievements[2]
+    dylan_missing = union - achievements[3]
+    print(f"\nAlice is missing: {alice_missing}")
+    print(f"\nBob is missing: {bob_missing}")
+    print(f"\nCharlie is missing: {charlie_missing}")
+    print(f"\nDylan is missing: {dylan_missing}")
