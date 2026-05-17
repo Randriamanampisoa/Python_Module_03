@@ -7,32 +7,34 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/14 12:25:37 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/17 07:57:01 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/17 08:09:03 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 import sys
 
-def parse(args: list):
-    all = {}
+
+def parse(args: list[str]) -> dict[str, int]:
+    all: dict[str, int] = {}
     for arg in args:
         if ':' not in arg:
             print(f"Error - invalid parameter '{arg}'")
             continue
-        key, value = arg.split(":", 1)
+        key, value_str = arg.split(":", 1)
         if key in all:
             print(f"Redundant item '{key}' - discarding")
             continue
         try:
-            value = int(value)
+            value = int(value_str)
         except ValueError:
-            print(f"Quantity error for '{key}': invalid literal for int() with base 10: '{value}'")
+            print(f"Quantity error for '{key}': invalid literal"
+                  f" for int() with base 10: '{value_str}'")
             continue
         all[key] = value
     return all
 
 
-def main():
+def main() -> None:
     args = sys.argv[1:]
     tmp = parse(args)
     print(f"Got inventory: {tmp}")
@@ -59,8 +61,9 @@ def main():
             min_key = val
     print(f"Item most abundant: {max_key} with quantity {max_val}")
     print(f"Item most abundant: {min_key} with quantity {min_val}")
-    tmp.update({"magic_item":1})
+    tmp.update({"magic_item": 1})
     print(f"Updated inventory: {tmp}")
+
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
