@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/14 12:25:37 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/17 08:20:07 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/17 08:20:56 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -15,7 +15,7 @@ import sys
 
 
 def parse(args: list[str]) -> dict[str, int]:
-    all: dict[str, int] = []
+    all: dict[str, int] = {}
     for arg in args:
         if ':' not in arg:
             print(f"Error - invalid parameter '{arg}'")
