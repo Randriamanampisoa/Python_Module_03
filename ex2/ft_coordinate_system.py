@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/29 17:52:34 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/14 13:28:50 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/19 15:43:10 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -35,23 +35,26 @@ def get_player_pos() -> tuple[float, float, float]:
             print(f"Error on parameter '{index}': {e}")
         except UnboundLocalError as e:
             print(e)
-
+        
 
 if __name__ == "__main__":
-    print("=== Game Coordinate System ===\n")
-    print("Get a first set of coordinates")
-    first = get_player_pos()
-    print(f"Got a first tuple: {first}")
-    x = first[0]
-    y = first[1]
-    z = first[2]
-    sqrt = math.sqrt((x)**2 + (y)**2 + (z)**2)
-    print(f"It includes: X={x}, Y={y}, Z={z}")
-    print(f"Distance to center: {sqrt: .4f}")
-    print("\nGet a second set of coordinates")
-    second = get_player_pos()
-    x1 = second[0]
-    y1 = second[1]
-    z1 = second[2]
-    sqrt = math.sqrt((x1-x)**2 + (y1-y)**2 + (z1-z)**2)
-    print(f"Distance between the 2 sets of coordinates: {sqrt: .4f}")
+    try:
+        print("=== Game Coordinate System ===\n")
+        print("Get a first set of coordinates")
+        first = get_player_pos()
+        print(f"Got a first tuple: {first}")
+        x = first[0]
+        y = first[1]
+        z = first[2]
+        sqrt = math.sqrt((x)**2 + (y)**2 + (z)**2)
+        print(f"It includes: X={x}, Y={y}, Z={z}")
+        print(f"Distance to center: {sqrt: .4f}")
+        print("\nGet a second set of coordinates")
+        second = get_player_pos()
+        x1 = second[0]
+        y1 = second[1]
+        z1 = second[2]
+        sqrt = math.sqrt((x1-x)**2 + (y1-y)**2 + (z1-z)**2)
+        print(f"Distance between the 2 sets of coordinates: {sqrt: .4f}")
+    except BaseException as e:
+            print(e)
