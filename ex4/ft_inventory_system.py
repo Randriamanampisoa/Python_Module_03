@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/14 12:25:37 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/17 08:20:56 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/20 11:11:39 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -29,7 +29,7 @@ def parse(args: list[str]) -> dict[str, int]:
         except ValueError:
             print(f"Quantity error for '{key}': invalid literal"
                   f" for int() with base 10: '{value_str}'")
-            continue
+            # continue
         all[key] = value
     return all
 

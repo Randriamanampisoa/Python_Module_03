@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/29 17:52:34 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/19 15:43:10 by fanilran           ###   ########.fr      #
+#   Updated: 2026/05/26 16:33:42 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -35,7 +35,7 @@ def get_player_pos() -> tuple[float, float, float]:
             print(f"Error on parameter '{index}': {e}")
         except UnboundLocalError as e:
             print(e)
-        
+
 
 if __name__ == "__main__":
     try:
@@ -57,4 +57,4 @@ if __name__ == "__main__":
         sqrt = math.sqrt((x1-x)**2 + (y1-y)**2 + (z1-z)**2)
         print(f"Distance between the 2 sets of coordinates: {sqrt: .4f}")
     except BaseException as e:
-            print(e)
+        print(e)
