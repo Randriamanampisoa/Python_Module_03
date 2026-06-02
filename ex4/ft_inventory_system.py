@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/14 12:25:37 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/20 11:11:39 by fanilran           ###   ########.fr      #
+#   Updated: 2026/06/02 14:46:09 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -20,7 +20,7 @@ def parse(args: list[str]) -> dict[str, int]:
         if ':' not in arg:
             print(f"Error - invalid parameter '{arg}'")
             continue
-        key, value_str = arg.split(":", 1)
+        key, value_str = arg.split(":")
         if key in all:
             print(f"Redundant item '{key}' - discarding")
             continue
@@ -29,7 +29,6 @@ def parse(args: list[str]) -> dict[str, int]:
         except ValueError:
             print(f"Quantity error for '{key}': invalid literal"
                   f" for int() with base 10: '{value_str}'")
-            # continue
         all[key] = value
     return all
 

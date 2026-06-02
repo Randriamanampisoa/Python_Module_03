@@ -7,20 +7,21 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/28 15:17:55 by fanilran            #+#    #+#            #
-#   Updated: 2026/04/28 19:58:01 by fanilran           ###   ########.fr      #
+#   Updated: 2026/06/02 14:45:50 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 import sys
 
+
 if __name__ == "__main__":
     print("=== Command Quest ===")
     print("Program name:", sys.argv[0])
-    i = 1
     if len(sys.argv) == 1:
         print("No arguments provided!")
     else:
         print("Arguments received: ", len(sys.argv) - 1)
+        i = 1
         for x in sys.argv[1:]:
             print(f"Argument {i}: {x}")
             i += 1

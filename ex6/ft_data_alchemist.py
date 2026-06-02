@@ -7,7 +7,7 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/26 17:06:29 by fanilran            #+#    #+#            #
-#   Updated: 2026/05/27 17:34:38 by fanilran           ###   ########.fr      #
+#   Updated: 2026/06/02 14:46:18 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -23,10 +23,10 @@ if __name__ == "__main__":
     print(f"Initial list of players: {player}")
     len_p = len(player)
     all_lst_capitalized = [player[i].capitalize() for i in range(len_p)]
-    already_lst_capitalize = [player[j] for j in range(len_p) if player[j] == player[j].capitalize()]
+    already_lst_capitalize = [player[j] for j in range(len_p)
+                              if player[j] == player[j].capitalize()]
     print(f"New list with all names capitalized: {all_lst_capitalized}")
     print(f"New list of capitalized names only: {already_lst_capitalize}")
-    i = 0
     all_dict = {}
     for i in range(len_p):
         all_dict[all_lst_capitalized[i]] = random.randint(1, 1000)
