@@ -36,6 +36,9 @@ def parse(args: list[str]) -> dict[str, int]:
 def main() -> None:
     args = sys.argv[1:]
     tmp = parse(args)
+    if not tmp:
+        print("No inventory provied!")
+        return
     print(f"Got inventory: {tmp}")
     lst = list(tmp.keys())
     len_keys = len(lst)
