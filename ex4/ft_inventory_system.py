@@ -15,29 +15,24 @@ import sys
 
 
 def parse(args: list[str]) -> dict[str, int]:
-    all: dict[str, int] = {}
+    all_dict: dict[str, int] = {}
     for arg in args:
-        if ':' not in arg:
-            print(f"Error - invalid parameter '{arg}'")
-            continue
-        key, value_str = arg.split(":")
-        if key in all:
-            print(f"Redundant item '{key}' - discarding")
-            continue
         try:
-            value = int(value_str)
-        except ValueError:
-            print(f"Quantity error for '{key}': invalid literal"
-                  f" for int() with base 10: '{value_str}'")
-        all[key] = value
-    return all
+            key_value = arg.split(":")
+            if len(key_value) != 0:
+                raise ValuError("Usage: Python <item_name>:<quantity>")
+            all_dict[key_value[0]] = int(key_value[1])
+        except Exception as e:
+            print(e)
+    return all_dict
 
 
 def main() -> None:
     args = sys.argv[1:]
     tmp = parse(args)
     if not tmp:
-        print("No inventory provied!")
+        print("No inventory provied! "
+              "Usage: Python <item_name>:<quantity>")
         return
     print(f"Got inventory: {tmp}")
     lst = list(tmp.keys())
@@ -47,7 +42,10 @@ def main() -> None:
     print(f"Total quantity of the {len_keys} items: {values}")
     for key in tmp:
         value = tmp[key]
-        percentage = (value / values) * 100
+        if values != 0:
+            percentage = (value / values) * 100
+        else:
+            percentage = 0
         print(f"Item {key} represents {round(percentage, 1)}%")
     max_val = 0
     max_key = None
