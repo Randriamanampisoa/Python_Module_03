@@ -7,11 +7,12 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/04/28 20:19:14 by fanilran            #+#    #+#            #
-#   Updated: 2026/06/02 15:08:51 by fanilran           ###   ########.fr      #
+#   Updated: 2026/06/03 16:58:56 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 import sys
+
 
 if __name__ == "__main__":
     print("=== Player Score Analytics ===")

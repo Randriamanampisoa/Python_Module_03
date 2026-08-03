@@ -7,11 +7,12 @@
 #   By: fanilran <fanilran@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/05/13 12:39:03 by fanilran            #+#    #+#            #
-#   Updated: 2026/06/02 15:09:01 by fanilran           ###   ########.fr      #
+#   Updated: 2026/06/03 14:01:01 by fanilran           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 import random
+
 
 all_achievements = [
     'Crafting Genius', 'Strategist', 'World Savior', 'Speed Runner',
